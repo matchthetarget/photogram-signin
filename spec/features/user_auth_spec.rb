@@ -81,13 +81,13 @@ describe "/photos - Create photo form" do
     visit "/photos"
     within(:css, "form") do
       fill_in "Image", with: "https://some.test/image-#{Time.now.to_i}.jpg"
-      fill_in "Caption", with: new_caption
+      fill_in "Caption", with: "Eat some pizza"
       find("button", :text => /Add photo/i ).click
     end
     
-
-    expect(page).to have_text(new_caption),
-      "Expected page to contain #{new_caption}, but didn't."
+    p page.text
+    expect(page).to have_text("Eat some pizza"),
+      "Expected page to contain #{"Eat some pizza"}, but didn't."
   end
 end
 
