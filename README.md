@@ -3,7 +3,7 @@
 [Here is your target.](http://photogram-signin.matchthetarget.com)
 
 **Follow along with the walkthrough video on Canvas.**
-
+ 
 ## Specs
 <details>
   <summary>Click here to see names of each test</summary>
