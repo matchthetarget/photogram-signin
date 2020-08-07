@@ -18,24 +18,24 @@
       <nav>
       <ul>
         <% if session.fetch(:user_id).nil? %>
-        <li>
-          <a href="/user_sign_in">Sign In</a>
-        </li>
-        <li>
-          <a href="/user_sign_up">Sign Up</a>
-        </li>
+          <li>
+            <a href="/user_sign_in">Sign In</a>
+          </li>
+          <li>
+            <a href="/user_sign_up">Sign Up</a>
+          </li>
         <% else%>
-        <li>
-          <% user_id = session.fetch(:user_id) %>
-          <% matching_user_records = User.where({ :id => user_id }) %>
-          <% current_user = matching_user_records.at(0) %>
-          <a href="/users/<%= current_user.username %>">
-            <%= current_user.username %>
-          </a>
-        </li>
-        <li>
-          <a href="/user_sign_out">Sign Out</a>
-        </li>
+          <li>
+            <% user_id = session.fetch(:user_id) %>
+            <% matching_user_records = User.where({ :id => user_id }) %>
+            <% current_user = matching_user_records.at(0) %>
+            <a href="/users/<%= current_user.username %>">
+              <%= current_user.username %>
+            </a>
+          </li>
+          <li>
+            <a href="/user_sign_out">Sign Out</a>
+          </li>
         <% end%>
         <li>
           <a href="/users">Users</a>

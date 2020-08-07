@@ -1,4 +1,4 @@
-desc "Fill the database tables with some dummy data"
+desc "Fill the database tables with some sample data"
 task({ :sample_data => :environment}) do
   starting = Time.now
 
@@ -15,46 +15,46 @@ task({ :sample_data => :environment}) do
   FollowRequest.delete_all
 
   users = [
-    {id: 81, username: "Galen", private: false, likes_count: 97, comments_count: 98, created_at: "2015-01-19 09:24:34", updated_at: "2019-10-08 10:25:00"},
-    {id: 82, username: "Trina", private: false, likes_count: 22, comments_count: 35, created_at: "2014-09-02 06:05:56", updated_at: "2019-10-08 10:25:00"},
-    {id: 83, username: "Tyree", private: true, likes_count: 23, comments_count: 41, created_at: "2017-06-23 22:31:32", updated_at: "2019-10-08 10:25:00"},
-    {id: 84, username: "Sharilyn", private: true, likes_count: 36, comments_count: 30, created_at: "2014-09-23 01:03:23", updated_at: "2019-10-08 10:25:00"},
-    {id: 85, username: "Judith", private: true, likes_count: 44, comments_count: 39, created_at: "2014-08-02 12:55:21", updated_at: "2019-10-08 10:25:00"},
-    {id: 86, username: "Roscoe", private: false, likes_count: 35, comments_count: 45, created_at: "2018-03-05 07:37:08", updated_at: "2019-10-08 10:25:00"},
-    {id: 87, username: "Thad", private: false, likes_count: 45, comments_count: 41, created_at: "2015-05-29 04:13:06", updated_at: "2019-10-08 10:25:00"},
-    {id: 88, username: "Vanetta", private: true, likes_count: 42, comments_count: 59, created_at: "2017-11-07 09:36:41", updated_at: "2019-10-08 10:25:00"},
-    {id: 89, username: "Jackie", private: false, likes_count: 32, comments_count: 27, created_at: "2016-10-28 00:47:57", updated_at: "2019-10-08 10:25:00"},
-    {id: 90, username: "Lucius", private: true, likes_count: 45, comments_count: 33, created_at: "2014-06-15 07:42:16", updated_at: "2019-10-08 10:25:00"},
-    {id: 91, username: "Phylicia", private: true, likes_count: 15, comments_count: 17, created_at: "2016-11-11 04:22:51", updated_at: "2019-10-08 10:25:00"},
-    {id: 92, username: "Trey", private: false, likes_count: 24, comments_count: 35, created_at: "2015-03-19 22:51:10", updated_at: "2019-10-08 10:25:00"},
-    {id: 93, username: "Wilford", private: false, likes_count: 26, comments_count: 25, created_at: "2018-07-03 04:50:16", updated_at: "2019-10-08 10:25:00"},
-    {id: 94, username: "Tristan", private: true, likes_count: 17, comments_count: 27, created_at: "2016-04-11 04:31:49", updated_at: "2019-10-08 10:25:00"},
-    {id: 95, username: "Leilani", private: false, likes_count: 52, comments_count: 54, created_at: "2016-07-07 15:54:04", updated_at: "2019-10-08 10:25:00"},
-    {id: 96, username: "Jolie", private: true, likes_count: 22, comments_count: 24, created_at: "2018-12-19 04:59:05", updated_at: "2019-10-08 10:25:00"},
-    {id: 97, username: "Roselee", private: false, likes_count: 33, comments_count: 50, created_at: "2018-09-23 23:09:31", updated_at: "2019-10-08 10:25:00"},
-    {id: 98, username: "Catherina", private: false, likes_count: 21, comments_count: 25, created_at: "2019-01-10 14:30:55", updated_at: "2019-10-08 10:25:00"},
-    {id: 99, username: "Jackson", private: false, likes_count: 27, comments_count: 27, created_at: "2018-08-18 12:42:06", updated_at: "2019-10-08 10:25:00"},
-    {id: 100, username: "Kina", private: false, likes_count: 13, comments_count: 18, created_at: "2018-05-05 13:27:22", updated_at: "2019-10-08 10:25:00"},
-    {id: 101, username: "Drew", private: false, likes_count: 52, comments_count: 68, created_at: "2015-03-06 21:22:35", updated_at: "2019-10-08 10:25:00"},
-    {id: 102, username: "Austin", private: true, likes_count: 25, comments_count: 25, created_at: "2014-07-27 22:35:21", updated_at: "2019-10-08 10:25:00"},
-    {id: 103, username: "Lea", private: false, likes_count: 53, comments_count: 60, created_at: "2016-01-27 07:56:16", updated_at: "2019-10-08 10:25:00"},
-    {id: 104, username: "Ester", private: true, likes_count: 54, comments_count: 67, created_at: "2016-09-23 04:05:25", updated_at: "2019-10-08 10:25:00"},
-    {id: 105, username: "Robin", private: true, likes_count: 22, comments_count: 19, created_at: "2017-02-27 23:11:30", updated_at: "2019-10-08 10:25:00"},
-    {id: 106, username: "Debbi", private: false, likes_count: 53, comments_count: 52, created_at: "2017-01-08 22:09:33", updated_at: "2019-10-08 10:25:00"},
-    {id: 107, username: "Rosaria", private: true, likes_count: 30, comments_count: 31, created_at: "2016-01-20 03:28:52", updated_at: "2019-10-08 10:25:00"},
-    {id: 108, username: "Maida", private: false, likes_count: 10, comments_count: 16, created_at: "2018-12-30 20:20:47", updated_at: "2019-10-08 10:25:00"},
-    {id: 109, username: "Augustine", private: true, likes_count: 103, comments_count: 93, created_at: "2015-12-21 09:36:27", updated_at: "2019-10-08 10:25:00"},
-    {id: 110, username: "Desmond", private: true, likes_count: 23, comments_count: 21, created_at: "2014-10-16 06:47:43", updated_at: "2019-10-08 10:25:00"},
-    {id: 111, username: "Diego", private: true, likes_count: 23, comments_count: 39, created_at: "2016-03-10 19:09:29", updated_at: "2019-10-08 10:25:00"},
-    {id: 112, username: "Cristina", private: true, likes_count: 56, comments_count: 54, created_at: "2016-02-16 02:31:11", updated_at: "2019-10-08 10:25:00"},
-    {id: 113, username: "Osvaldo", private: true, likes_count: 34, comments_count: 39, created_at: "2016-06-17 12:20:22", updated_at: "2019-10-08 10:25:00"},
-    {id: 114, username: "Chi", private: false, likes_count: 50, comments_count: 42, created_at: "2014-06-25 05:21:58", updated_at: "2019-10-08 10:25:00"},
-    {id: 115, username: "Johnie", private: true, likes_count: 23, comments_count: 21, created_at: "2014-11-30 09:49:10", updated_at: "2019-10-08 10:25:00"},
-    {id: 116, username: "Dominique", private: true, likes_count: 68, comments_count: 38, created_at: "2019-02-06 09:54:37", updated_at: "2019-10-08 10:25:00"},
-    {id: 117, username: "Anisa", private: true, likes_count: 40, comments_count: 48, created_at: "2019-03-05 12:06:26", updated_at: "2019-10-08 10:25:00"},
-    {id: 118, username: "Isidro", private: false, likes_count: 19, comments_count: 10, created_at: "2017-09-20 21:46:36", updated_at: "2019-10-08 10:25:00"},
-    {id: 119, username: "Nakita", private: false, likes_count: 19, comments_count: 30, created_at: "2017-06-02 16:55:13", updated_at: "2019-10-08 10:25:00"},
-    {id: 120, username: "Elmer", private: true, likes_count: 36, comments_count: 36, created_at: "2017-11-24 23:32:54", updated_at: "2019-10-08 10:25:00"}
+    {id: 81, username: "galen", private: false, likes_count: 97, comments_count: 98, created_at: "2015-01-19 09:24:34", updated_at: "2019-10-08 10:25:00"},
+    {id: 82, username: "trina", private: false, likes_count: 22, comments_count: 35, created_at: "2014-09-02 06:05:56", updated_at: "2019-10-08 10:25:00"},
+    {id: 83, username: "tyree", private: true, likes_count: 23, comments_count: 41, created_at: "2017-06-23 22:31:32", updated_at: "2019-10-08 10:25:00"},
+    {id: 84, username: "sharilyn", private: true, likes_count: 36, comments_count: 30, created_at: "2014-09-23 01:03:23", updated_at: "2019-10-08 10:25:00"},
+    {id: 85, username: "judith", private: true, likes_count: 44, comments_count: 39, created_at: "2014-08-02 12:55:21", updated_at: "2019-10-08 10:25:00"},
+    {id: 86, username: "roscoe", private: false, likes_count: 35, comments_count: 45, created_at: "2018-03-05 07:37:08", updated_at: "2019-10-08 10:25:00"},
+    {id: 87, username: "thad", private: false, likes_count: 45, comments_count: 41, created_at: "2015-05-29 04:13:06", updated_at: "2019-10-08 10:25:00"},
+    {id: 88, username: "vanetta", private: true, likes_count: 42, comments_count: 59, created_at: "2017-11-07 09:36:41", updated_at: "2019-10-08 10:25:00"},
+    {id: 89, username: "jackie", private: false, likes_count: 32, comments_count: 27, created_at: "2016-10-28 00:47:57", updated_at: "2019-10-08 10:25:00"},
+    {id: 90, username: "lucius", private: true, likes_count: 45, comments_count: 33, created_at: "2014-06-15 07:42:16", updated_at: "2019-10-08 10:25:00"},
+    {id: 91, username: "phylicia", private: true, likes_count: 15, comments_count: 17, created_at: "2016-11-11 04:22:51", updated_at: "2019-10-08 10:25:00"},
+    {id: 92, username: "trey", private: false, likes_count: 24, comments_count: 35, created_at: "2015-03-19 22:51:10", updated_at: "2019-10-08 10:25:00"},
+    {id: 93, username: "wilford", private: false, likes_count: 26, comments_count: 25, created_at: "2018-07-03 04:50:16", updated_at: "2019-10-08 10:25:00"},
+    {id: 94, username: "tristan", private: true, likes_count: 17, comments_count: 27, created_at: "2016-04-11 04:31:49", updated_at: "2019-10-08 10:25:00"},
+    {id: 95, username: "leilani", private: false, likes_count: 52, comments_count: 54, created_at: "2016-07-07 15:54:04", updated_at: "2019-10-08 10:25:00"},
+    {id: 96, username: "jolie", private: true, likes_count: 22, comments_count: 24, created_at: "2018-12-19 04:59:05", updated_at: "2019-10-08 10:25:00"},
+    {id: 97, username: "roselee", private: false, likes_count: 33, comments_count: 50, created_at: "2018-09-23 23:09:31", updated_at: "2019-10-08 10:25:00"},
+    {id: 98, username: "catherina", private: false, likes_count: 21, comments_count: 25, created_at: "2019-01-10 14:30:55", updated_at: "2019-10-08 10:25:00"},
+    {id: 99, username: "jackson", private: false, likes_count: 27, comments_count: 27, created_at: "2018-08-18 12:42:06", updated_at: "2019-10-08 10:25:00"},
+    {id: 100, username: "kina", private: false, likes_count: 13, comments_count: 18, created_at: "2018-05-05 13:27:22", updated_at: "2019-10-08 10:25:00"},
+    {id: 101, username: "drew", private: false, likes_count: 52, comments_count: 68, created_at: "2015-03-06 21:22:35", updated_at: "2019-10-08 10:25:00"},
+    {id: 102, username: "austin", private: true, likes_count: 25, comments_count: 25, created_at: "2014-07-27 22:35:21", updated_at: "2019-10-08 10:25:00"},
+    {id: 103, username: "lea", private: false, likes_count: 53, comments_count: 60, created_at: "2016-01-27 07:56:16", updated_at: "2019-10-08 10:25:00"},
+    {id: 104, username: "ester", private: true, likes_count: 54, comments_count: 67, created_at: "2016-09-23 04:05:25", updated_at: "2019-10-08 10:25:00"},
+    {id: 105, username: "robin", private: true, likes_count: 22, comments_count: 19, created_at: "2017-02-27 23:11:30", updated_at: "2019-10-08 10:25:00"},
+    {id: 106, username: "debbi", private: false, likes_count: 53, comments_count: 52, created_at: "2017-01-08 22:09:33", updated_at: "2019-10-08 10:25:00"},
+    {id: 107, username: "rosaria", private: true, likes_count: 30, comments_count: 31, created_at: "2016-01-20 03:28:52", updated_at: "2019-10-08 10:25:00"},
+    {id: 108, username: "maida", private: false, likes_count: 10, comments_count: 16, created_at: "2018-12-30 20:20:47", updated_at: "2019-10-08 10:25:00"},
+    {id: 109, username: "augustine", private: true, likes_count: 103, comments_count: 93, created_at: "2015-12-21 09:36:27", updated_at: "2019-10-08 10:25:00"},
+    {id: 110, username: "desmond", private: true, likes_count: 23, comments_count: 21, created_at: "2014-10-16 06:47:43", updated_at: "2019-10-08 10:25:00"},
+    {id: 111, username: "diego", private: true, likes_count: 23, comments_count: 39, created_at: "2016-03-10 19:09:29", updated_at: "2019-10-08 10:25:00"},
+    {id: 112, username: "cristina", private: true, likes_count: 56, comments_count: 54, created_at: "2016-02-16 02:31:11", updated_at: "2019-10-08 10:25:00"},
+    {id: 113, username: "osvaldo", private: true, likes_count: 34, comments_count: 39, created_at: "2016-06-17 12:20:22", updated_at: "2019-10-08 10:25:00"},
+    {id: 114, username: "chi", private: false, likes_count: 50, comments_count: 42, created_at: "2014-06-25 05:21:58", updated_at: "2019-10-08 10:25:00"},
+    {id: 115, username: "johnie", private: true, likes_count: 23, comments_count: 21, created_at: "2014-11-30 09:49:10", updated_at: "2019-10-08 10:25:00"},
+    {id: 116, username: "dominique", private: true, likes_count: 68, comments_count: 38, created_at: "2019-02-06 09:54:37", updated_at: "2019-10-08 10:25:00"},
+    {id: 117, username: "anisa", private: true, likes_count: 40, comments_count: 48, created_at: "2019-03-05 12:06:26", updated_at: "2019-10-08 10:25:00"},
+    {id: 118, username: "isidro", private: false, likes_count: 19, comments_count: 10, created_at: "2017-09-20 21:46:36", updated_at: "2019-10-08 10:25:00"},
+    {id: 119, username: "nakita", private: false, likes_count: 19, comments_count: 30, created_at: "2017-06-02 16:55:13", updated_at: "2019-10-08 10:25:00"},
+    {id: 120, username: "elmer", private: true, likes_count: 36, comments_count: 36, created_at: "2017-11-24 23:32:54", updated_at: "2019-10-08 10:25:00"}
   ]
   User.insert_all!(users)
 
@@ -65,7 +65,7 @@ task({ :sample_data => :environment}) do
     end
     puts "Found a password column. Added passwords."
   else
-    puts "No password column found. Didn't add passwords."
+    # puts "No password column found. Didn't add passwords."
   end
 
   follow_requests = [
@@ -4226,5 +4226,5 @@ task({ :sample_data => :environment}) do
   elapsed = ending - starting
 
   puts "#{elapsed.to_i} seconds elapsed."
-  puts "Generated Dummy Data"
+  puts "Generated Sample Data"
 end
